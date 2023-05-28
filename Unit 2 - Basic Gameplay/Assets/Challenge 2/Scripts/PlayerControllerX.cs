@@ -12,7 +12,7 @@ public class PlayerControllerX : MonoBehaviour
     {
         if (cooldown > 0)
             cooldown -= 1 * Time.deltaTime;
-        
+
         // On spacebar press, send dog
         if (Input.GetKeyDown(KeyCode.Space) && cooldown <= 0)
         {
