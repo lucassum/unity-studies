@@ -17,7 +17,7 @@ public class PlayerControllerX : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && cooldown <= 0)
         {
             Instantiate(dogPrefab, transform.position, dogPrefab.transform.rotation);
-            cooldown = 2;
+            cooldown = 2; 
         }
     }
 }
