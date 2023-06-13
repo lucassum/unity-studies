@@ -7,9 +7,13 @@ public class SpawnManager : MonoBehaviour
     public GameObject prefab;
     public float spawnDelay = 2f;
     public float spawnRate = 2f;
+    private PlayerController playerController;
+
     // Start is called before the first frame update
     void Start()
     {
+        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+
         InvokeRepeating("SpawnObstacle", spawnDelay, spawnRate);
     }
 
@@ -21,6 +25,7 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnObstacle()
     {
-        Instantiate(prefab, transform.position, prefab.transform.rotation);
+        if (!playerController.gameOver)
+            Instantiate(prefab, transform.position, prefab.transform.rotation);
     }
 }
